@@ -43,7 +43,3 @@ RUN apt-get update && apt-get install -y \
     mkdir -p ~/.terraform.d/plugins/linux_amd64 &&\
     mv terraform-provider-vra_v${VER} ~/.terraform.d/plugins/
 
-#Get latest Terraform repo for VRA & VMC
-#mkdir terraform &&\
-#git clone https://github.com/vmware/terraform-provider-vra.git ./terraform/vra && \
-#git clone https://github.com/vmware/terraform-provider-vmc.git ./terraform/vmc
