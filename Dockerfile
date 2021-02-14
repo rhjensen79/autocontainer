@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y \
     wget \ 
     golang \
     python3-pip \
+    docker.io \
     unzip &&\ 
     # Install Docker-Compose
     export VER="1.28.2" &&\
