@@ -1,11 +1,13 @@
 FROM ubuntu:20.04
 LABEL maintainer="Robert Jensen - robert@robert-jensen.dk"
-LABEL description="CD/CD Container, containing all buld tools, used in my Buld Pipelines"
+LABEL description="CI/CD Container, containing all buld tools, used in my Buld Pipelines"
 WORKDIR /tmp
+ENV DEBIAN_FRONTEND="noninteractive" TZ="Europe/Copenhagen"
 RUN apt-get update && apt-get install -y \
     git \
     curl \
     wget \ 
+    golang \
     python3-pip \
     unzip &&\ 
     # Install Docker-Compose
@@ -33,7 +35,15 @@ RUN apt-get update && apt-get install -y \
     unzip terraform_${VER}_linux_amd64.zip &&\
     rm terraform_${VER}_linux_amd64.zip &&\
     mv terraform /usr/local/bin &&\
-    #Get latest Terraform repo for VRA & VMC
-    mkdir terraform &&\
-    git clone https://github.com/vmware/terraform-provider-vra.git ./terraform/vra && \
-    git clone https://github.com/vmware/terraform-provider-vmc.git ./terraform/vmc
+    # Install Terraform VRA provider
+    export VER="0.1.9" &&\
+    wget -q https://github.com/vmware/terraform-provider-vra/releases/download/v${VER}/terraform-provider-vra-linux_amd64-v${VER}.tgz &&\
+    tar xvf terraform-provider-vra-linux_amd64-v${VER}.tgz &&\
+    rm terraform-provider-vra-linux_amd64-v${VER}.tgz &&\
+    mkdir -p ~/.terraform.d/plugins/linux_amd64 &&\
+    mv terraform-provider-vra_v${VER} ~/.terraform.d/plugins/
+
+#Get latest Terraform repo for VRA & VMC
+#mkdir terraform &&\
+#git clone https://github.com/vmware/terraform-provider-vra.git ./terraform/vra && \
+#git clone https://github.com/vmware/terraform-provider-vmc.git ./terraform/vmc
