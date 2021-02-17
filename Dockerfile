@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
     curl -L "https://github.com/docker/compose/releases/download/${VER}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose &&\
     chmod +x /usr/local/bin/docker-compose &&\
     # Install Packer
-    export VER="1.6.6" &&\
+    export VER="1.7.0" &&\
     wget https://releases.hashicorp.com/packer/${VER}/packer_${VER}_linux_amd64.zip &&\
     unzip packer_${VER}_linux_amd64.zip &&\
     rm packer_${VER}_linux_amd64.zip &&\
