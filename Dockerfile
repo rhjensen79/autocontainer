@@ -22,7 +22,7 @@ RUN apt-get update && apt-get install -y \
     rm packer_${VER}_linux_amd64.zip &&\
     mv packer /usr/local/bin &&\
     #Install Packer Windows Update provisioner
-    export VER="0.10.1" &&\
+    export VER="0.11.0" &&\
     wget https://github.com/rgl/packer-provisioner-windows-update/releases/download/v${VER}/packer-provisioner-windows-update_${VER}_linux_amd64.tar.gz &&\
     tar xf packer-provisioner-windows-update_${VER}_linux_amd64.tar.gz &&\
     rm packer-provisioner-windows-update_${VER}_linux_amd64.tar.gz &&\
@@ -31,7 +31,7 @@ RUN apt-get update && apt-get install -y \
     rm LICENSE.txt &&\
     rm README.md &&\
     # Install Terraform
-    export VER="0.14.6" &&\
+    export VER="0.14.7" &&\
     wget https://releases.hashicorp.com/terraform/${VER}/terraform_${VER}_linux_amd64.zip &&\
     unzip terraform_${VER}_linux_amd64.zip &&\
     rm terraform_${VER}_linux_amd64.zip &&\
