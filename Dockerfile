@@ -42,5 +42,14 @@ RUN apt-get update && apt-get install -y \
     tar xvf terraform-provider-vra-linux_amd64-v${VER}.tgz &&\
     rm terraform-provider-vra-linux_amd64-v${VER}.tgz &&\
     mkdir -p ~/.terraform.d/plugins/linux_amd64 &&\
-    mv terraform-provider-vra_v${VER} ~/.terraform.d/plugins/
+    mv terraform-provider-vra_v${VER} ~/.terraform.d/plugins/ &&\
+    # Install CS-CLI
+    export VER="0.1.4" &&\
+    wget https://download3.vmware.com/software/vmw-tools/vrealize-cs-cli/code-stream-cli_${VER}_Linux_x86_64.tar.gz &&\
+    tar xvf code-stream-cli_${VER}_Linux_x86_64.tar.gz &&\
+    rm code-stream-cli_${VER}_Linux_x86_64.tar.gz &&\
+    rm LICENSE.txt &&\
+    rm README.md &&\
+    mv cs-cli /usr/local/bin 
+
 
