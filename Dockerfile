@@ -31,7 +31,7 @@ RUN apt-get update && apt-get install -y \
     rm LICENSE.txt &&\
     rm README.md &&\
     # Install Terraform
-    export VER="0.14.7" &&\
+    export VER="0.14.9" &&\
     wget https://releases.hashicorp.com/terraform/${VER}/terraform_${VER}_linux_amd64.zip &&\
     unzip terraform_${VER}_linux_amd64.zip &&\
     rm terraform_${VER}_linux_amd64.zip &&\
