@@ -15,14 +15,18 @@ RUN apt-get update && apt-get install -y \
     export VER="1.28.2" &&\
     curl -L "https://github.com/docker/compose/releases/download/${VER}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose &&\
     chmod +x /usr/local/bin/docker-compose &&\
+    echo "----------------------------------------" &&\
     echo "!!! Docker-Compose install complete !!!" &&\
+    echo "----------------------------------------" &&\
     # Install Packer
     export VER="1.7.0" &&\
     wget https://releases.hashicorp.com/packer/${VER}/packer_${VER}_linux_amd64.zip &&\
     unzip packer_${VER}_linux_amd64.zip &&\
     rm packer_${VER}_linux_amd64.zip &&\
     mv packer /usr/local/bin &&\
+    echo "----------------------------------------" &&\
     echo "!!! Packer install complete !!!" &&\
+    echo "----------------------------------------" &&\
     #Install Packer Windows Update provisioner
     export VER="0.11.0" &&\
     wget https://github.com/rgl/packer-provisioner-windows-update/releases/download/v${VER}/packer-provisioner-windows-update_${VER}_linux_amd64.tar.gz &&\
@@ -32,14 +36,18 @@ RUN apt-get update && apt-get install -y \
     mv packer-provisioner-windows-update /usr/local/bin &&\
     rm LICENSE.txt &&\
     rm README.md &&\
+    echo "----------------------------------------" &&\
     echo "!!! Packer Windows Update provisioner install complete !!!" &&\
+    echo "----------------------------------------" &&\
     # Install Terraform
     export VER="0.14.9" &&\
     wget https://releases.hashicorp.com/terraform/${VER}/terraform_${VER}_linux_amd64.zip &&\
     unzip terraform_${VER}_linux_amd64.zip &&\
     rm terraform_${VER}_linux_amd64.zip &&\
     mv terraform /usr/local/bin &&\
+    echo "----------------------------------------" &&\
     echo "!!! Terraform install complete !!!" &&\
+    echo "----------------------------------------" &&\
     # Install Terraform VRA provider
     export VER="0.1.9" &&\
     wget -q https://github.com/vmware/terraform-provider-vra/releases/download/v${VER}/terraform-provider-vra-linux_amd64-v${VER}.tgz &&\
@@ -47,7 +55,9 @@ RUN apt-get update && apt-get install -y \
     rm terraform-provider-vra-linux_amd64-v${VER}.tgz &&\
     mkdir -p ~/.terraform.d/plugins/linux_amd64 &&\
     mv terraform-provider-vra_v${VER} ~/.terraform.d/plugins/ &&\
+    echo "----------------------------------------" &&\
     echo "!!! Terraform VRA provider install complete !!!" &&\
+    echo "----------------------------------------" &&\
     # Install CS-CLI
     export VER="0.1.4" &&\
     wget https://download3.vmware.com/software/vmw-tools/vrealize-cs-cli/code-stream-cli_${VER}_Linux_x86_64.tar.gz &&\
@@ -56,6 +66,7 @@ RUN apt-get update && apt-get install -y \
     rm LICENSE.txt &&\
     rm README.md &&\
     mv cs-cli /usr/local/bin &&\
-    echo "!!! CS_CLI provider install complete !!!" 
-
+    echo "----------------------------------------" &&\
+    echo "!!! CS_CLI provider install complete !!!" &&\
+    echo "----------------------------------------" 
 
