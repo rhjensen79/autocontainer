@@ -31,13 +31,13 @@ RUN apt-get update && apt-get install -y \
     rm LICENSE.txt &&\
     rm README.md &&\
     # Install Terraform
-    export VER="0.14.7" &&\
+    export VER="0.14.9" &&\
     wget https://releases.hashicorp.com/terraform/${VER}/terraform_${VER}_linux_amd64.zip &&\
     unzip terraform_${VER}_linux_amd64.zip &&\
     rm terraform_${VER}_linux_amd64.zip &&\
     mv terraform /usr/local/bin &&\
     # Install Terraform VRA provider
-    export VER="0.1.9" &&\
+    export VER="0.3.4" &&\
     wget -q https://github.com/vmware/terraform-provider-vra/releases/download/v${VER}/terraform-provider-vra-linux_amd64-v${VER}.tgz &&\
     tar xvf terraform-provider-vra-linux_amd64-v${VER}.tgz &&\
     rm terraform-provider-vra-linux_amd64-v${VER}.tgz &&\
