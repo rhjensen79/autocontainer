@@ -1,8 +1,13 @@
 # autocontainer
-Repo for my CI/CD Automation container. This container, contains all the tools i need, across all my CI/CD pipelines
+Repo for my CI/CD Automation container. This container, contains all the tools I need, across all my CI/CD pipelines
 
-The Container is build automaticly, and can be used by using the repo :
+### Update 
+I changed this to be build by my Gitlab CI/CD and pushed to my Harbor Registry.
+Mostly due to Docker rate limits. 
 
-robertjensen/autocontainer
+Fell free to pull it directly from there using : 
 
-Docker hub page, can be found here : https://hub.docker.com/r/robertjensen/autocontainer
+```
+docker pull registry.cmplab.dk/cmplab/autocontainer:latest
+```
+
