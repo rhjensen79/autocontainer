@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y \
     git \
     curl \
     wget \ 
+    nano \ 
     golang \
     python3-pip \
     docker.io \
