@@ -40,7 +40,7 @@ RUN apt-get update && apt-get install -y \
     echo "!!! Packer Windows Update provisioner install complete !!!" &&\
     echo "----------------------------------------" &&\
     # Install Terraform
-    export VER="0.14.9" &&\
+    export VER="0.15.0" &&\
     wget https://releases.hashicorp.com/terraform/${VER}/terraform_${VER}_linux_amd64.zip &&\
     unzip terraform_${VER}_linux_amd64.zip &&\
     rm terraform_${VER}_linux_amd64.zip &&\
