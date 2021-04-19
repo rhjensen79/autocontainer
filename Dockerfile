@@ -29,10 +29,8 @@ RUN apt-get update && apt-get install -y \
     echo "!!! Packer install complete !!!" &&\
     echo "----------------------------------------" &&\
     #Install Packer Windows Update provisioner
-    export VER="0.12.0" &&\
-    # Fix for v0.12.0 with changed url
-    https://github.com/rgl/packer-plugin-windows-update/releases/download/v0.12.0/packer-plugin-windows-update_v0.12.0_x5.0_linux_amd64.zip &&\
-    #wget https://github.com/rgl/packer-provisioner-windows-update/releases/download/v${VER}/packer-provisioner-windows-update_${VER}_linux_amd64.tar.gz &&\
+    export VER="0.11.0" &&\
+    wget https://github.com/rgl/packer-provisioner-windows-update/releases/download/v${VER}/packer-provisioner-windows-update_${VER}_linux_amd64.tar.gz &&\
     tar xf packer-provisioner-windows-update_${VER}_linux_amd64.tar.gz &&\
     rm packer-provisioner-windows-update_${VER}_linux_amd64.tar.gz &&\
     chmod +x packer-provisioner-windows-update &&\
