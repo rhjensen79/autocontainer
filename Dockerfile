@@ -29,7 +29,7 @@ RUN apt-get update && apt-get install -y \
     echo "!!! Packer install complete !!!" &&\
     echo "----------------------------------------" &&\
     #Install Packer Windows Update provisioner
-    export VER="0.11.0" &&\
+    export VER="0.12.0" &&\
     wget https://github.com/rgl/packer-provisioner-windows-update/releases/download/v${VER}/packer-provisioner-windows-update_${VER}_linux_amd64.tar.gz &&\
     tar xf packer-provisioner-windows-update_${VER}_linux_amd64.tar.gz &&\
     rm packer-provisioner-windows-update_${VER}_linux_amd64.tar.gz &&\
