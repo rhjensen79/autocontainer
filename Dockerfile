@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y \
     echo "!!! Docker-Compose install complete !!!" &&\
     echo "----------------------------------------" &&\
     # Install Packer
-    export VER="1.7.2" &&\
+    export VER="1.7.3" &&\
     wget https://releases.hashicorp.com/packer/${VER}/packer_${VER}_linux_amd64.zip &&\
     unzip packer_${VER}_linux_amd64.zip &&\
     rm packer_${VER}_linux_amd64.zip &&\
