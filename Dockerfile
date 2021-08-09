@@ -70,5 +70,6 @@ RUN apt-get update && apt-get install -y \
     mv cs-cli /usr/local/bin &&\
     echo "----------------------------------------" &&\
     echo "!!! CS_CLI provider install complete !!!" &&\
-    echo "----------------------------------------" 
+    echo "----------------------------------------" &&\
+    echo "Build Complete"
 
