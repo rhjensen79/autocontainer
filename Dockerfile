@@ -1,4 +1,5 @@
-FROM registry.cmplab.dk/proxy/library/ubuntu:20.04
+#FROM registry.cmplab.dk/proxy/library/ubuntu:20.04
+FROM ubuntu:20.04
 LABEL maintainer="Robert Jensen - robert@robert-jensen.dk"
 LABEL description="CI/CD Container, containing all buld tools, used in my Buld Pipelines"
 WORKDIR /tmp
