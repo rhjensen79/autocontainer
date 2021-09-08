@@ -8,8 +8,6 @@ Use it by pulling it directly from the repo, using :
 ```
 docker pull ghcr.io/rhjensen79/autocontainer:main
 ```
-
-```
 ### Update 
 I changed this to be build using Github Actions, and pushed directly to Github Registry..
 Mostly due to Docker rate limits. 
