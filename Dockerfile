@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -y \
     echo "!!! Docker-Compose install complete !!!" &&\
     echo "----------------------------------------" &&\
     # Install Packer
-    export VER="1.7.3" &&\
+    export VER="1.7.4" &&\
     wget https://releases.hashicorp.com/packer/${VER}/packer_${VER}_linux_amd64.zip &&\
     unzip packer_${VER}_linux_amd64.zip &&\
     rm packer_${VER}_linux_amd64.zip &&\
@@ -30,7 +30,7 @@ RUN apt-get update && apt-get install -y \
     echo "!!! Packer install complete !!!" &&\
     echo "----------------------------------------" &&\
     #Install Packer Windows Update provisioner
-    export VER="0.11.0" &&\
+    export VER="0.14.0" &&\
     wget https://github.com/rgl/packer-provisioner-windows-update/releases/download/v${VER}/packer-provisioner-windows-update_${VER}_linux_amd64.tar.gz &&\
     tar xf packer-provisioner-windows-update_${VER}_linux_amd64.tar.gz &&\
     rm packer-provisioner-windows-update_${VER}_linux_amd64.tar.gz &&\
@@ -42,7 +42,7 @@ RUN apt-get update && apt-get install -y \
     echo "!!! Packer Windows Update provisioner install complete !!!" &&\
     echo "----------------------------------------" &&\
     # Install Terraform
-    export VER="0.15.0" &&\
+    export VER="1.0.6" &&\
     wget https://releases.hashicorp.com/terraform/${VER}/terraform_${VER}_linux_amd64.zip &&\
     unzip terraform_${VER}_linux_amd64.zip &&\
     rm terraform_${VER}_linux_amd64.zip &&\
