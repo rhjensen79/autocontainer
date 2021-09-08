@@ -1,4 +1,3 @@
-#FROM registry.cmplab.dk/proxy/library/ubuntu:20.04
 FROM ubuntu:20.04
 LABEL maintainer="Robert Jensen - robert@robert-jensen.dk"
 LABEL description="CI/CD Container, containing all buld tools, used in my Buld Pipelines"
@@ -21,7 +20,7 @@ RUN apt-get update && apt-get install -y \
     echo "!!! Docker-Compose install complete !!!" &&\
     echo "----------------------------------------" &&\
     # Install Packer
-    export VER="1.7.3" &&\
+    export VER="1.7.4" &&\
     wget https://releases.hashicorp.com/packer/${VER}/packer_${VER}_linux_amd64.zip &&\
     unzip packer_${VER}_linux_amd64.zip &&\
     rm packer_${VER}_linux_amd64.zip &&\
@@ -30,12 +29,12 @@ RUN apt-get update && apt-get install -y \
     echo "!!! Packer install complete !!!" &&\
     echo "----------------------------------------" &&\
     #Install Packer Windows Update provisioner
-    export VER="0.11.0" &&\
-    wget https://github.com/rgl/packer-provisioner-windows-update/releases/download/v${VER}/packer-provisioner-windows-update_${VER}_linux_amd64.tar.gz &&\
-    tar xf packer-provisioner-windows-update_${VER}_linux_amd64.tar.gz &&\
-    rm packer-provisioner-windows-update_${VER}_linux_amd64.tar.gz &&\
-    chmod +x packer-provisioner-windows-update &&\
-    mv packer-provisioner-windows-update /usr/local/bin &&\
+    #export VER="0.11.0" &&\
+    wget https://github.com/rgl/packer-plugin-windows-update/releases/download/v0.14.0/packer-plugin-windows-update_v0.14.0_x5.0_linux_arm64.zip &&\
+    unzip packer* &&\
+    rm *.zip &&\
+    chmod +x packer-plugin-windows-update* &&\
+    mv packer-plugin-windows* /usr/local/bin &&\
     rm LICENSE.txt &&\
     rm README.md &&\
     echo "----------------------------------------" &&\
