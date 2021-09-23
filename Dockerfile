@@ -31,7 +31,7 @@ RUN apt-get update && apt-get install -y \
     packer --version &&\
     echo "----------------------------------------" &&\
     #Install Packer Windows Update provisioner
-    wget https://github.com/rgl/packer-plugin-windows-update/releases/download/v0.14.0/packer-plugin-windows-update_v0.14.0_x5.0_linux_arm64.zip &&\
+    wget https://github.com/rgl/packer-plugin-windows-update/releases/download/v0.14.0/packer-plugin-windows-update_v0.14.0_x5.0_linux_amd64.zip &&\
     unzip packer* &&\
     rm *.zip &&\
     chmod +x packer-plugin-windows-update* &&\
